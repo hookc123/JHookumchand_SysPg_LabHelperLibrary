@@ -7,9 +7,9 @@
 int main()
 {
     std::cout << "-----------Validate Int----------" << std::endl;
-    int min;
-    int max;
-    Helper::GetRandRange(min, max);
+    int min= Helper::randNum();
+    int max= Helper::randNum();
+    Helper::GetRandRange(min,max);
     std::cout << "Range: " << min << '-' << max << std::endl;
     int number= Helper::GetValidatedInt("Input Number: ", min, max);
     

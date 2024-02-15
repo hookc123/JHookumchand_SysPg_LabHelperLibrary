@@ -13,12 +13,19 @@ namespace Helper
 	
 	int randNum(int min = 0, int max = 0)
 	{
+		srand(time(0));
 		int output;
-		do
+		if (min >= 0 && max != 0) {
+			do
+			{
+				
+				output = rand() % (max + 1);
+			} while (output < min);
+		}
+		else
 		{
-			srand(time(0));
-			output = rand() % (max + 1);
-		} while (output < min);
+			output = rand();
+		}
 		return output;
 	}
 
