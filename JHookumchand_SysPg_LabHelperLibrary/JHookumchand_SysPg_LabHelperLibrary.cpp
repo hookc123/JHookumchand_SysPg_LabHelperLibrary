@@ -7,9 +7,11 @@
 int main()
 {
     std::cout << "-----------Validate Int----------" << std::endl;
-    int min=50;
-    int max=100;
-    int number= Helper::GetValidatedInt("Input Number between ", min, max);
+    int min;
+    int max;
+    Helper::GetRandRange(min, max);
+    std::cout << "Range: " << min << '-' << max << std::endl;
+    int number= Helper::GetValidatedInt("Input Number: ", min, max);
     
     std::cout << "-----------Print Binary----------" << std::endl;
     Helper::printBinary(number);

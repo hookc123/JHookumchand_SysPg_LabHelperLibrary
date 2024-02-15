@@ -2,11 +2,24 @@
 #include <iostream>
 #include <string>
 namespace Helper
+
 {
+
 	void clearInputBuffer()
 	{
 		std::cin.clear();
 		std::cin.ignore(INT_MAX, '\n');
+	}
+	
+	int randNum(int min = 0, int max = 0)
+	{
+		int output;
+		do
+		{
+			srand(time(0));
+			output = rand() % (max + 1);
+		} while (output < min);
+		return output;
 	}
 
 	int GetValidatedInt(const char* strMessage, int nMinimumRange = 0, int nMaximumRange = 0)
@@ -37,6 +50,12 @@ namespace Helper
 		} while (valid==false);
 		return userInput;
 	}
+	int PrintMenu(const std::string menu[], int menuSize) {
+		for (int i = 0; i < menuSize; i++) {
+			std::cout << i + 1 << ") " << menu[i] << std::endl;
+		}
+		return GetValidatedInt("Please enter your choice: ", 1, menuSize);
+	}
 	void printBinary(int& number)
 	{
 
@@ -53,14 +72,13 @@ namespace Helper
 		std::cout << std::endl;
 
 	}
-	int randNum(int min = 0, int max = 0)
+	void GetRandRange(int& min, int& max) 
 	{
-		int output;
-		do
-		{
 		srand(time(0));
-			output = rand()%(max+1);
-		} while (output < min);
-		return output;
+		do {
+		max = rand();
+		
+			min = rand();
+		} while (min > max);
 	}
 }
