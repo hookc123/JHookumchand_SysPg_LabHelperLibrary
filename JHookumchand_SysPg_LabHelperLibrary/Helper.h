@@ -58,9 +58,11 @@ namespace Helper
 		return userInput;
 	}
 	int PrintMenu(const std::string menu[],int menuLength) {
+		std::cout<<std::endl;
 		for (int i = 0; i < menuLength; i++) {
 			std::cout << i + 1 << ") " << menu[i] << std::endl;
 		}
+		std::cout << std::endl;
 		return (GetValidatedInt("Please enter your choice: ", 1, menu->length())-1);
 	}
 	void printBinary(int& number)
