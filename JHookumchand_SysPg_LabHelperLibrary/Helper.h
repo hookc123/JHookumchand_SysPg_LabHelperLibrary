@@ -1,10 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <string>
 namespace Helper
 
 {
-
+	
 	void clearInputBuffer()
 	{
 		std::cin.clear();
@@ -95,5 +96,11 @@ namespace Helper
 		_CrtSetBreakAlloc(-1); // set block of memory to find memory leak
 		_CrtDumpMemoryLeaks();
 	}
-
+	void printHeader(std::string& message,std::string iteration="")
+	{
+		std::cout << "----------"<<message<<iteration<<"----------" << std::endl;
+	}
+		
+	
+		
 }
